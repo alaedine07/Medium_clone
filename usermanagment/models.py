@@ -8,7 +8,7 @@ class BlogUsers(models.Model):
     instagram = models.CharField(max_length=300, blank=True, null=True)
     linkedin = models.CharField(max_length=300, blank=True, null=True)
     github = models.CharField(max_length=300, blank=True, null=True)
-    age = models.IntegerField()
+    age = models.IntegerField(null=True)
 
     def __str__(self):
         return str(self.user)
