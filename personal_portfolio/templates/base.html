@@ -18,6 +18,13 @@
           </ul>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          {% if user.is_authenticated %}
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              Welcome {{ user.username }}
+            </li>
+          </ul>
+          {% else %}
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'login' %}">Login</a>
@@ -26,6 +33,7 @@
               <a class="nav-link" href="{% url 'register_page' %}">register</a>
             </li>
           </ul>
+          {% endif %}
         </div>
     </div>
 
